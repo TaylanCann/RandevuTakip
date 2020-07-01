@@ -1,10 +1,7 @@
-<h2>    <%=mesaj%>  </h2>
-
-
     <div class="container">
       <div class="row ">
 
-        <div class="panel panel-info">
+        <div class="panel panel-info loginPanel" >
 
           <div class="panel-heading">
           
@@ -14,18 +11,34 @@
           
         <div class="panel-body">
          
-          <form>
+          <form action="../../../user" method="POST">
             <div style="margin-bottom: 25px;" class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="login-username" type="text" class="from-control" name="Username" placeholder="Kullanıcı Adı">
+              <input id="username" type="text" class="from-control" name="username" placeholder="Kullanıcı Adı">
             </div>
+            <div style="margin-bottom: 25px;" class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="text" class="from-control" name="password" placeholder="Şifre">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Giriş">
+            <a href="#" class="btn btn-default">Kaydol</a>
           </form>
-         
-    
           </div>
         
-          <div class="panel-footer">
-        
+          <div class="panel-footer clearfix">
+          
+            <%if( typeof username!='undefined'){%>
+            
+                <h3><%=username%></h3>
+            
+            <%}%>
+
+            <%if( typeof password!='undefined'){%>
+
+              <h3><%=password%></h3>
+
+            <%}%>
+
           </div>
         
         </div>            
